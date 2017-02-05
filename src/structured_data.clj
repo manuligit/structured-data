@@ -5,7 +5,12 @@
   (Math/pow xx xx)))
 
 (defn spiff [v]
-  :-)
+  (let [v1 (get v 0)
+        v2 (get v 2)]
+    (+ v1 v2)))
+
+;(defn spiff [v]
+;  (+ (get v 0) (get v 2)))
 
 (defn cutify [v]
   :-)
