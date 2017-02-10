@@ -9,14 +9,8 @@
         v2 (get v 2)]
     (+ v1 v2)))
 
-;(defn spiff [v]
-;  (+ (get v 0) (get v 2)))
-
 (defn cutify [v]
   (conj v "<3"))
-
-;(defn spiff-destructuring [v]
-;  :-)
 
 (defn spiff-destructuring [v]
   (let [[x y z] v]
@@ -70,20 +64,21 @@
   (let [authors (:authors book)
   new-book (conj authors new-author)]
   (assoc book :authors new-book)
-  ; conj collection item
   ))
 
 (defn alive? [author]
   (not (contains? author :death-year)))
 
 (defn element-lengths [collection]
-  :-)
+  (map count collection))
 
 (defn second-elements [collection]
-  :-)
+  (let [second (fn [x] (get x 1))]
+    (map second collection)))
 
 (defn titles [books]
-  :-)
+  (let [books (fn [x] (:title x))])
+  (map :title books))
 
 (defn monotonic? [a-seq]
   :-)
