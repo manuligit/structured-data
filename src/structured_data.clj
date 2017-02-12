@@ -80,14 +80,18 @@
   (let [books (fn [x] (:title x))])
   (map :title books))
 
-(defn monotonic? [a-seq]
-  :-)
-
 (defn stars [n]
-  :-)
+  (apply str (repeat n "*")))
+
+(defn monotonic? [a-seq]
+  (or
+    (apply <= a-seq)
+    (apply >= a-seq)))
 
 (defn toggle [a-set elem]
-  :-)
+  (if (contains? a-set elem)
+    (disj a-set elem)
+    (conj a-set elem)))
 
 (defn contains-duplicates? [a-seq]
   :-)
