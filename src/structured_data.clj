@@ -46,7 +46,7 @@
 
 
 (defn contains-rectangle? [outer inner]
-    (let [[[x1 y1] [x2 y2]] outer
+  (let [[[x1 y1] [x2 y2]] outer
           [inner1 inner2] inner]
   (and (contains-point? outer inner1)
        (contains-point? outer inner2))))
@@ -110,7 +110,12 @@
     (set (map :name (authors books))))
 
 (defn author->string [author]
-  :-)
+  (let [name (:name author)
+        birth (:birth-year author)
+        death (:death-year author)]
+    (if birth
+      (str name " ( " birth " - " death " )")
+      (str name))))
 
 (defn authors->string [authors]
   :-)
